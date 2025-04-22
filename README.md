@@ -7,6 +7,8 @@
 
 ## Instrucciones
 
+> **Nota:** Todas las ejecuciones de código y simulaciones detalladas se encuentran en el archivo [tests.ipynb](/tests.ipynb) para referencia.
+
 Antes de empezar a realizar esta actividad haga un **fork** de este repositorio y sobre este trabaje en la solución de las preguntas planteadas en la actividad de simulación. Las respuestas deben ser respondidas en español o si lo prefiere en ingles en el lugar señalado para ello (La palabra **answer** muestra donde).
 
 
@@ -714,3 +716,19 @@ This program, [mlfq.py](mlfq.py), allows you to see how the MLFQ scheduler prese
   </details>
   <br>
 
+---
+## Conclusiones
+
+A través de las simulaciones realizadas con MLFQ hemos podido observar:
+
+1. **Balance entre trabajos interactivos y batch**: El scheduler MLFQ prioriza trabajos cortos e interactivos asignándoles mayores prioridades, mientras que los trabajos largos van descendiendo en las colas.
+
+2. **Importancia del priority boost**: El mecanismo de reinicio periódico de prioridades (-b) previene la inanición de trabajos largos y garantiza equidad en el sistema.
+
+3. **Gaming del scheduler**: Las reglas antiguas (-S) permiten manipular el comportamiento del scheduler mediante E/S estratégicas, lo que demuestra la importancia de las políticas modernas de asignación de prioridades.
+
+4. **Flexibilidad de configuración**: Parámetros como quantums (-q), allotments (-a) y prioridades iniciales (-n) permiten adaptar el comportamiento del scheduler a diferentes cargas de trabajo.
+
+Todos estos experimentos refuerzan todos los conceptos teóricos sobre planificación de CPU, y nos dan a entender cómo los sistemas operativos pueden balancear diferentes cargas de trabajo manteniendo la capacidad de respuesta del sistema.
+
+Los resultados de las simulaciones coinciden con lo descrito en el capítulo sobre MLFQ, y nos ha permitido validar su implementación de manera práctica.
